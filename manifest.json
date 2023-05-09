@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "GPT Chat Exporter",
+    "version": "1.0",
+    "description": "Save ChatGPT conversations as TXT or HTML file.",
+    "permissions": ["activeTab", "downloads"],
+    "action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
