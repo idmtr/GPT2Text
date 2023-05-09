@@ -8,7 +8,6 @@ function download(filename, content, mimeType) {
     URL.revokeObjectURL(url);
 }
 
-
 function scrapeConversation() {
     const messageGroups = Array.from(document.querySelectorAll('.group'));
     const messages = messageGroups.map((group) => {
@@ -46,9 +45,6 @@ function scrapeConversationAsHtml() {
     const html = messages.filter((message) => message !== undefined).join('');
     return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>${html}</body></html>`;
 }
-
-
-
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'save_conversation_txt') {
